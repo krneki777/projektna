@@ -1,4 +1,8 @@
 import math
+import turtle
+
+okno = turtle.Screen()
+zelva = turtle.Turtle()
 
 def pozicija(x, y, r, koordinate):
     for fi in range (360):
@@ -7,10 +11,11 @@ def pozicija(x, y, r, koordinate):
         y = lokacijay
         y += math.sin(math.radians(fi)) * r
         x += math.cos(math.radians(fi)) * r
-        seznam.append(int(x))
-        seznam.append(int(y))
+        seznam.append(round(x))
+        seznam.append(round(y))
+        zelva.goto(seznam)
         koordinate.append(seznam)
-        print(seznam)
+        #print(seznam)
     return koordinate 
 
 t = int(input("Vstavi čas:"))
@@ -20,12 +25,13 @@ lokacijay = 0
 koordinate1 = []
 pozicija (lokacijax, lokacijay, r, koordinate1)
 
-#r = t 
-#lokacijax = 10
-#lokacijay = 10
-#koordinate2 = []
-#print("DRUGI MIKROFON")
-#pozicija (lokacijax, lokacijay, r, koordinate2)
-#for element in koordinate1:
-#    if element in koordinate2:
-#        print(element)
+lokacijax = 20
+lokacijay = 10
+koordinate2 = []
+pozicija(lokacijax, lokacijay, r, koordinate2)
+
+for element in koordinate1:
+    if element in koordinate2:
+        print(element)
+
+turtle.done()
