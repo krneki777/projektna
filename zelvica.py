@@ -11,8 +11,8 @@ def pozicija(x, y, r, koordinate):
         y = lokacijay
         y += math.sin(math.radians(fi)) * r
         x += math.cos(math.radians(fi)) * r
-        seznam.append(round(x))
-        seznam.append(round(y))
+        seznam.append(round(x, 5))
+        seznam.append(round(y, 5))
         zelva.goto(seznam)
         koordinate.append(seznam)
         #print(seznam)
